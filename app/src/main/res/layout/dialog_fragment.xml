@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="@string/name"
+        android:text="Name"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"/>
@@ -21,11 +21,11 @@
         android:layout_margin="20dp"/>
 
     <TextView
-        android:id="@+id/item_adress"
+        android:id="@+id/item_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="@string/adress"
+        android:text="Address"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"/>
@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="@string/info"
+        android:text="Info"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"/>

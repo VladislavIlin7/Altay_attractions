@@ -6,15 +6,15 @@ public class Place {
     private final long id;
     private final String name;
     private final String pathToImage;
-    private final String adress;
+    private final String address;
     private final String informations;
     private final LatLng latLng;
 
-    public Place(long id, String name, String pathToImage, String adress, String informations, LatLng latLng){
+    public Place(long id, String name, String pathToImage, String address, String informations, LatLng latLng){
         this.id = id;
         this.name = name;
         this.pathToImage = pathToImage;
-        this.adress = adress;
+        this.address = address;
         this.informations = informations;
         this.latLng = latLng;
     }
@@ -31,8 +31,8 @@ public class Place {
         return pathToImage;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
     public String getInformations() {
