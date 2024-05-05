@@ -22,7 +22,8 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.firebase.Firebase;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -60,7 +61,7 @@ public class MapService implements OnMapReadyCallback, GoogleMap.OnMapClickListe
             @Override
             public boolean onMarkerClick(@NonNull Marker marker) {
                 Place place = DataBase.getPlaceByName(marker.getTitle());
-                Dialog dialog = new Dialog(context);
+                BottomSheetDialog dialog = new BottomSheetDialog(context);
 
                 dialog.setContentView(R.layout.dialog_fragment);
                 dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,
@@ -74,9 +75,9 @@ public class MapService implements OnMapReadyCallback, GoogleMap.OnMapClickListe
                 TextView item_info = dialog.getWindow().findViewById(R.id.item_info);
                 ImageView imageView = dialog.getWindow().findViewById(R.id.item_image);
 
-                item_name.setText(Objects.requireNonNull(place).getName());
-                item_address.setText(Objects.requireNonNull(place).getAddress());
-                item_info.setText(Objects.requireNonNull(place).getInformations());
+                item_name.setText(place.getName());
+                item_address.setText(place.getAddress());
+                item_info.setText(place.getInformations());
 
                 FirebaseApp.initializeApp(context);
                 FirebaseStorage firebaseStorage = FirebaseStorage.getInstance(pathToImageStorage);
