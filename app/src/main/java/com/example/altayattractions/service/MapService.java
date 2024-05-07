@@ -52,9 +52,8 @@ public class MapService implements OnMapReadyCallback, GoogleMap.OnMapClickListe
     public void onMapReady(@NonNull GoogleMap googleMap) {
         googleMap.setOnMapClickListener(this);
         googleMap.setOnMapLongClickListener(this);
-        for (Place p :
-                DataBase.getPlaces()) {
-            googleMap.addMarker(new MarkerOptions().position(p.getLatLng()).title(p.getName()));
+        for (Place p : DataBase.getPlaces()) {
+            googleMap.addMarker(new MarkerOptions().position( new LatLng(p.getLatitude(), p.getLongitude())).title(p.getName()));
 
         }
         googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
